@@ -1,8 +1,8 @@
 export const PORTFOLIO = {
   name: 'Nguyễn Thành Nam',
   title: 'Web & Mobile Developer',
-  tagline: 'Crafting seamless web & mobile experiences — from concept to deployment',
-  about: `Web & Mobile Developer with 7 years of experience delivering scalable digital products across web and mobile platforms. Progressed from developer to Team Lead, with a track record of driving technical direction, mentoring development teams, and managing end-to-end project delivery. Experienced in client requirements gathering, UX/UI shaping, and taking products from concept through to production release.`,
+  tagline: ' Building scalable web & mobile apps — clean code, great UX, shipped on time',
+  about: `Web & Mobile Developer with 6 years of experience delivering scalable digital products across web and mobile platforms. Progressed from developer to Team Lead, with a track record of driving technical direction, mentoring development teams, and managing end-to-end project delivery. Experienced in client requirements gathering, UX/UI shaping, and taking products from concept through to production release.`,
 
   contact: {
     email: 'thanhnamntn96@gmail.com',
@@ -12,7 +12,7 @@ export const PORTFOLIO = {
   },
 
   stats: [
-    { value: '7+', label: 'Years of Experience' },
+    { value: '6+', label: 'Years of Experience' },
     { value: '3+', label: 'Years as Team Lead' },
     { value: '2', label: 'Tech Domains' },
   ],
@@ -72,11 +72,11 @@ export const PORTFOLIO = {
 
   projects: [
     {
-      name: 'Bloom',
+      name: 'Blooms',
       category: 'Coffee Shop & Flower Retail POS',
       platform: 'mobile',
       description:
-        'A Flutter POS app for Blooms N Brews — a coffee shop and flower retail chain — supporting beverage and flower ordering, AI-powered flower recognition via computer vision, multi-method payment processing, membership management, and thermal receipt printing.',
+        'A Flutter POS app for Blooms & Brews — a coffee shop and flower retail chain — supporting beverage and flower ordering, AI-powered flower recognition via computer vision, multi-method payment processing, membership management, and thermal receipt printing.',
       highlights: [
         'Integrated OpenCV and Google ML Kit for real-time camera-based flower recognition and QR/barcode scanning',
         'Built AI chat assistant with WebSocket subscription to a backend AI agent for product recommendations',
