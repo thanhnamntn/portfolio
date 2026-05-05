@@ -1,0 +1,63 @@
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <h2>Work <span class="gradient-text">Experience</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="exp-layout">
+      <!-- Timeline -->
+      <div class="timeline">
+        @for (job of experience; track job.role; let i = $index) {
+          <div class="timeline-item" appScrollReveal>
+            <div class="tl-dot" [class.current]="job.current">
+              @if (job.current) {
+                <div class="tl-pulse"></div>
+              }
+            </div>
+
+            <div class="exp-card glass-card">
+              <div class="exp-header">
+                <div class="exp-meta">
+                  <span class="exp-company">{{ job.company }}</span>
+                  <span class="exp-period">{{ job.period }}</span>
+                </div>
+                <div class="exp-role-row">
+                  <h3 class="exp-role">{{ job.role }}</h3>
+                  @if (job.current) {
+                    <span class="badge-current">Current</span>
+                  }
+                </div>
+              </div>
+
+              <ul class="exp-bullets">
+                @for (bullet of job.bullets; track bullet) {
+                  <li>
+                    <span class="bullet-dot"></span>
+                    {{ bullet }}
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Education sidebar -->
+      <div class="edu-block" appScrollReveal>
+        <h3 class="edu-title">Education</h3>
+        @for (edu of education; track edu.school) {
+          <div class="edu-card glass-card">
+            <div class="edu-icon">🎓</div>
+            <div class="edu-info">
+              <p class="edu-degree">{{ edu.degree }}</p>
+              <p class="edu-field gradient-text">{{ edu.field }}</p>
+              <p class="edu-school">{{ edu.schoolVi }}</p>
+              <p class="edu-school-en">{{ edu.school }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<nav class="navbar" [class.scrolled]="isScrolled()">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <button class="logo" (click)="navigate('#home')">
+      <span class="gradient-text">NN</span>
+    </button>
+
+    <!-- Desktop links -->
+    <ul class="nav-links">
+      @for (link of links; track link.label) {
+        <li>
+          <button (click)="navigate(link.href)">{{ link.label }}</button>
+        </li>
+      }
+    </ul>
+
+    <!-- CTA -->
+    <a href="mailto:thanhnamntn96@gmail.com" class="nav-cta">Hire Me</a>
+
+    <!-- Hamburger -->
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  @if (menuOpen()) {
+    <div class="mobile-menu">
+      @for (link of links; track link.label) {
+        <button (click)="navigate(link.href)">{{ link.label }}</button>
+      }
+    </div>
+  }
+</nav>

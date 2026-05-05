@@ -1,0 +1,48 @@
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <h2>About <span class="gradient-text">Me</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+      <!-- Avatar -->
+      <div class="avatar-wrap" appScrollReveal>
+        <div class="avatar-ring">
+          <div class="avatar-inner">
+            <span class="avatar-initials gradient-text">NN</span>
+          </div>
+          <div class="avatar-orb"></div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="about-content" appScrollReveal>
+        <h3>Nguyễn Thành Nam</h3>
+        <p class="role-badge">Web & Mobile Developer · Team Lead</p>
+
+        <p class="about-text">{{ data.about }}</p>
+
+        <!-- Stats -->
+        <div class="stats-row">
+          @for (stat of data.stats; track stat.label) {
+            <div class="stat-card glass-card">
+              <span class="stat-value gradient-text">{{ stat.value }}</span>
+              <span class="stat-label">{{ stat.label }}</span>
+            </div>
+          }
+        </div>
+
+        <!-- CTA -->
+        <div class="about-cta">
+          <a [href]="data.contact.linkedin" target="_blank" rel="noopener" class="btn-primary">
+            LinkedIn Profile
+          </a>
+          <a [href]="data.contact.github" target="_blank" rel="noopener" class="btn-outline">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

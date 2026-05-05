@@ -1,0 +1,76 @@
+<section class="section projects-section" id="projects">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <h2>Featured <span class="gradient-text">Projects</span></h2>
+      <div class="section-line"></div>
+      <p class="section-sub">
+        Enterprise products I led and built at GoldenEye Technologies across web and mobile.
+        Repositories are private — highlights below reflect real production work.
+      </p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs" appScrollReveal>
+      @for (f of filters; track f.value) {
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter() === f.value"
+          (click)="setFilter(f.value)"
+        >
+          <span>{{ f.icon }}</span>
+          {{ f.label }}
+        </button>
+      }
+    </div>
+
+    <!-- Projects grid -->
+    <div class="projects-grid">
+      @for (project of filtered(); track project.name; let i = $index) {
+        <div class="project-card glass-card" appScrollReveal>
+
+          <!-- Top bar -->
+          <div class="card-top">
+            <span class="platform-badge" [class.mobile]="project.platform === 'mobile'">
+              {{ project.platform === 'mobile' ? '📱 Mobile' : '🌐 Web' }}
+            </span>
+            <span class="project-role">{{ project.role }}</span>
+          </div>
+
+          <!-- Title & category -->
+          <div class="card-title-row">
+            <div>
+              <h3 class="project-name gradient-text">{{ project.name }}</h3>
+              <p class="project-category">{{ project.category }}</p>
+            </div>
+            <div class="lock-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0110 0v4"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p class="project-desc">{{ project.description }}</p>
+
+          <!-- Highlights -->
+          <ul class="project-highlights">
+            @for (item of project.highlights; track item) {
+              <li>
+                <span class="hi-dot"></span>
+                {{ item }}
+              </li>
+            }
+          </ul>
+
+          <!-- Tech stack -->
+          <div class="tech-stack">
+            @for (t of project.tech; track t) {
+              <span class="tech-tag">{{ t }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

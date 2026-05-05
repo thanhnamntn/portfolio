@@ -1,0 +1,217 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 6rem 1.5rem 4rem;
+}
+
+/* Floating orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.orb-1 {
+  width: 480px;
+  height: 480px;
+  background: rgba(139, 92, 246, 0.18);
+  top: -100px;
+  right: -80px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 360px;
+  height: 360px;
+  background: rgba(6, 182, 212, 0.14);
+  bottom: -60px;
+  left: -60px;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.orb-3 {
+  width: 240px;
+  height: 240px;
+  background: rgba(139, 92, 246, 0.1);
+  top: 40%;
+  left: 30%;
+  animation: float 7s ease-in-out infinite 2s;
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.greeting {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.hero-name {
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero-role {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  font-weight: 500;
+  color: var(--text-muted);
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.typed-text {
+  color: var(--text);
+}
+
+.cursor {
+  color: var(--purple);
+  font-weight: 300;
+  transition: opacity 0.1s;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* CTA Buttons */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.btn-primary {
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--purple), var(--cyan));
+  color: #fff;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px rgba(139, 92, 246, 0.35);
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.45);
+  }
+}
+
+.btn-outline {
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  backdrop-filter: blur(8px);
+
+  &:hover {
+    border-color: var(--purple);
+    background: rgba(139, 92, 246, 0.08);
+    transform: translateY(-2px);
+  }
+}
+
+/* Social row */
+.social-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.social-btn {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+
+  &:hover {
+    color: var(--purple);
+    border-color: var(--purple);
+    background: rgba(139, 92, 246, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.mouse {
+  width: 22px;
+  height: 34px;
+  border: 2px solid rgba(139, 92, 246, 0.4);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.wheel {
+  width: 3px;
+  height: 6px;
+  background: var(--purple);
+  border-radius: 2px;
+  animation: float 1.5s ease-in-out infinite;
+}

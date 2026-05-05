@@ -1,0 +1,29 @@
+<section class="section skills-section" id="skills">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <h2>My <span class="gradient-text">Skills</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="categories" appScrollReveal>
+      @for (cat of categories; track cat) {
+        <div class="category-block">
+          <h3 class="cat-label">{{ cat === 'Language' ? 'Languages' : cat === 'Framework' ? 'Frameworks' : cat === 'Design' ? 'Design & UX' : 'Management' }}</h3>
+          <div class="skill-grid">
+            @for (skill of byCategory(cat); track skill.name) {
+              <div class="skill-card glass-card" [style.--accent]="skill.color">
+                <div class="skill-abbr" [style.background]="skill.color" [style.color]="skill['dark'] ? '#111' : '#fff'">
+                  {{ skill.abbr }}
+                </div>
+                <div class="skill-info">
+                  <span class="skill-name">{{ skill.name }}</span>
+                  <span class="skill-cat">{{ skill.category }}</span>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
