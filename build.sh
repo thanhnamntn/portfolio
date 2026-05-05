@@ -10,6 +10,12 @@ echo "Building..."
 npx ng build --configuration production --base-href "/portfolio/"
 
 echo "Deploying to GitHub Pages..."
-npx ngh --dir=dist/Portfolio/browser --no-silent
+git checkout gh-pages
+git rebase main
+cp -r dist/Portfolio/browser/. .
+git add -A
+git diff --cached --quiet || git commit -m "Deploy"
+git push origin gh-pages
+git checkout main
 
 echo "Done! https://thanhnamntn.github.io/portfolio/"

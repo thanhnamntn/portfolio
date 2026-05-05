@@ -9,7 +9,11 @@
       "Bash(npx ngh *)",
       "Bash(git ls-remote *)",
       "Bash(chmod +x *)",
-      "Bash(./build.sh)"
+      "Bash(./build.sh)",
+      "Bash(git rebase *)",
+      "Bash(git checkout *)",
+      "Bash(mv .claude/settings.local.json /tmp/settings.local.json.bak)",
+      "Bash(mv /tmp/settings.local.json.bak .claude/settings.local.json)"
     ]
   }
 }
