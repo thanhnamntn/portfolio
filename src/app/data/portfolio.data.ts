@@ -2,7 +2,7 @@ export const PORTFOLIO = {
   name: 'Nguyễn Thành Nam',
   title: 'Web & Mobile Developer',
   tagline: 'Crafting seamless web & mobile experiences — from concept to deployment',
-  about: `I'm a passionate Web & Mobile Developer with 7 years of experience building scalable digital products. Since joining GoldenEye Technologies from its earliest startup days, I've grown from developer into a Team Lead role — steering technical direction, mentoring teams, and owning delivery end-to-end. Beyond writing code, I bridge the gap between business and technology: gathering client requirements, shaping intuitive UX/UI, and seeing projects through from first wireframe to production release across both web and mobile platforms.`,
+  about: `Web & Mobile Developer with 7 years of experience delivering scalable digital products across web and mobile platforms. Progressed from developer to Team Lead, with a track record of driving technical direction, mentoring development teams, and managing end-to-end project delivery. Experienced in client requirements gathering, UX/UI shaping, and taking products from concept through to production release.`,
 
   contact: {
     email: 'thanhnamntn96@gmail.com',
