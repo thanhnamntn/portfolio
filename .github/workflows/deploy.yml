@@ -29,6 +29,8 @@ jobs:
 
       - run: npm ci
 
+      - run: npm run build:css
+
       - run: npx ng build --configuration production --base-href "/portfolio/"
 
       - uses: actions/configure-pages@v4
