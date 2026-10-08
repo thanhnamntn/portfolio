@@ -1,0 +1,59 @@
+<section class="section works-section" id="works">
+  <div class="container">
+    <div class="section-shell">
+      <div class="section-eyebrow" appScrollReveal>
+        <span class="eyebrow-index">02 / 09</span>
+        <span class="eyebrow-label">Selected Works</span>
+      </div>
+
+      <div class="works-content">
+        <div class="works-header" appScrollReveal>
+          <div>
+            <h2>Things I've built.</h2>
+            <p class="section-sub">A selection of products, platforms and systems I've worked on over the years.</p>
+          </div>
+          <div class="carousel-controls">
+            <button class="arrow-btn" (click)="scroll('left')" aria-label="Scroll left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <button class="arrow-btn" (click)="scroll('right')" aria-label="Scroll right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="works-row" #row>
+          @for (work of works; track work.name; let i = $index) {
+            <div class="work-card glass-card" appScrollReveal>
+              <!-- TODO: swap for a real product screenshot -->
+              <div class="work-thumb"></div>
+
+              <div class="work-body">
+                <span class="work-index">0{{ i + 1 }}</span>
+                <h3 class="work-name">{{ work.name }}</h3>
+                <p class="work-category">{{ work.category }}</p>
+
+                <div class="tech-stack">
+                  @for (t of work.tech.slice(0, 4); track t) {
+                    <span class="tech-tag">{{ t }}</span>
+                  }
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+
+        <a href="#case-study" class="view-all">
+          View All Projects
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

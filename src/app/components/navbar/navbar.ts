@@ -1,11 +1,11 @@
 import { Component, HostListener, signal, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { PORTFOLIO } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   templateUrl: './navbar.html',
-  styleUrl: './navbar.scss',
 })
 export class NavbarComponent {
   private platformId = inject(PLATFORM_ID);
@@ -13,12 +13,12 @@ export class NavbarComponent {
   isScrolled = signal(false);
   menuOpen = signal(false);
 
+  email = PORTFOLIO.contact.email;
+
   links = [
-    { label: 'Home', href: '#home' },
+    { label: 'Work', href: '#works' },
     { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
     { label: 'Experience', href: '#experience' },
-    { label: 'Projects', href: '#projects' },
     { label: 'Contact', href: '#contact' },
   ];
 

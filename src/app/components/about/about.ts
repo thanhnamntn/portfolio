@@ -11,4 +11,5 @@ import { PORTFOLIO } from '../../data/portfolio.data';
 })
 export class AboutComponent {
   data = PORTFOLIO;
+  callName = PORTFOLIO.name.trim().split(' ').at(-1);
 }

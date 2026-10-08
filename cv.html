@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nguyễn Thành Nam — CV</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10.5pt;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.5;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 14mm 16mm 14mm 16mm;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    border-bottom: 2.5px solid #2563EB;
+    margin-bottom: 14px;
+  }
+  .header-left h1 {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    letter-spacing: -0.5px;
+  }
+  .header-left .title {
+    font-size: 11.5pt;
+    color: #2563EB;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 9.5pt;
+    color: #444;
+    line-height: 1.8;
+  }
+  .header-right a { color: #2563EB; text-decoration: none; }
+
+  /* ── SECTIONS ── */
+  .section { margin-bottom: 13px; }
+  .section-title {
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2563EB;
+    border-bottom: 1px solid #BFDBFE;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+  }
+
+  /* ── SUMMARY ── */
+  .summary p {
+    color: #333;
+    line-height: 1.6;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 20px;
+  }
+  .skill-group { margin-bottom: 4px; }
+  .skill-category {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .skill-tag {
+    background: #EFF6FF;
+    color: #1e40af;
+    border: 1px solid #BFDBFE;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-size: 9pt;
+    font-weight: 500;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-item { margin-bottom: 11px; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .exp-role {
+    font-weight: 700;
+    font-size: 10.5pt;
+    color: #111;
+  }
+  .exp-period {
+    font-size: 9pt;
+    color: #6B7280;
+    white-space: nowrap;
+  }
+  .exp-company {
+    font-size: 9.5pt;
+    color: #2563EB;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .exp-bullets {
+    padding-left: 14px;
+    margin-top: 2px;
+  }
+  .exp-bullets li {
+    font-size: 9.5pt;
+    color: #333;
+    margin-bottom: 2px;
+    line-height: 1.5;
+  }
+
+  /* ── PROJECTS ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .project-card {
+    border: 1px solid #E5E7EB;
+    border-radius: 5px;
+    padding: 8px 10px;
+    break-inside: avoid;
+  }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+  .project-name {
+    font-weight: 700;
+    font-size: 10pt;
+    color: #111;
+  }
+  .project-platform {
+    font-size: 8pt;
+    color: #fff;
+    background: #2563EB;
+    padding: 1px 6px;
+    border-radius: 3px;
+    text-transform: capitalize;
+  }
+  .project-platform.mobile { background: #7C3AED; }
+  .project-category {
+    font-size: 8.5pt;
+    color: #6B7280;
+    margin-bottom: 4px;
+  }
+  .project-role-badge {
+    display: inline-block;
+    font-size: 8pt;
+    color: #059669;
+    background: #D1FAE5;
+    border: 1px solid #A7F3D0;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-bottom: 4px;
+  }
+  .project-highlights {
+    padding-left: 12px;
+    margin-bottom: 5px;
+  }
+  .project-highlights li {
+    font-size: 8.5pt;
+    color: #374151;
+    margin-bottom: 1.5px;
+    line-height: 1.45;
+  }
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-top: 4px;
+  }
+  .tech-tag {
+    font-size: 7.5pt;
+    color: #374151;
+    background: #F3F4F6;
+    border: 1px solid #E5E7EB;
+    padding: 1px 5px;
+    border-radius: 2px;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .edu-left .edu-school { font-weight: 700; font-size: 10pt; }
+  .edu-left .edu-degree { font-size: 9.5pt; color: #555; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { margin: 0; padding: 12mm 15mm; }
+    .project-card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Nguyễn Thành Nam</h1>
+      <div class="title">Web &amp; Mobile Developer</div>
+    </div>
+    <div class="header-right">
+      thanhnamntn96@gmail.com<br/>
+      0976 579 731<br/>
+      <a href="https://www.linkedin.com/in/nam-nguyen-thanh-11022a16b/">linkedin.com/in/nam-nguyen-thanh</a><br/>
+      <a href="https://github.com/thanhnamntn">github.com/thanhnamntn</a>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section summary">
+    <div class="section-title">Summary</div>
+    <p>Web &amp; Mobile Developer delivering scalable digital products across web and mobile platforms. Progressed from developer to Tech Lead, with a track record of driving technical direction, mentoring development teams, and managing end-to-end project delivery. Experienced in client requirements gathering, UX/UI shaping, and taking products from concept through to production release.</p>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-title">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-category">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Dart</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-category">Frameworks</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Angular</span>
+          <span class="skill-tag">Vue.js</span>
+          <span class="skill-tag">Flutter</span>
+        </div>
+      </div>
+      <div class="skill-group" style="margin-top:5px">
+        <div class="skill-category">Management &amp; Design</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Technical Leadership</span>
+          <span class="skill-tag">UX / UI Design</span>
+          <span class="skill-tag">Req. Analysis</span>
+          <span class="skill-tag">Client Relations</span>
+          <span class="skill-tag">Project Deployment</span>
+        </div>
+      </div>
+      <div class="skill-group" style="margin-top:5px">
+        <div class="skill-category">Tools &amp; Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag">GraphQL</span>
+          <span class="skill-tag">RESTful API</span>
+          <span class="skill-tag">gRPC</span>
+          <span class="skill-tag">WebSockets</span>
+          <span class="skill-tag">Auth0</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">Supabase</span>
+          <span class="skill-tag">Nx</span>
+          <span class="skill-tag">Pinia</span>
+          <span class="skill-tag">Riverpod</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Tech Lead</span>
+        <span class="exp-period">2022 – Present</span>
+      </div>
+      <div class="exp-company">Goldeneye Technologies</div>
+      <ul class="exp-bullets">
+        <li>Lead a cross-functional team of developers across web and mobile projects</li>
+        <li>Architect scalable solutions using Angular, VueJS and Flutter for enterprise clients</li>
+        <li>Collaborate directly with clients to gather and refine project requirements</li>
+        <li>Oversee end-to-end delivery from planning, design, development to production</li>
+        <li>Experienced in releasing mobile apps to the Google Play Store (Android) and Apple App Store (iOS), including TestFlight distribution</li>
+        <li>Conduct code reviews and establish best practices to maintain code quality</li>
+        <li>Mentor junior developers, driving team growth and technical excellence</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Web &amp; Mobile Developer</span>
+        <span class="exp-period">2019 – 2022</span>
+      </div>
+      <div class="exp-company">Goldeneye Technologies</div>
+      <ul class="exp-bullets">
+        <li>Built responsive web applications using Angular and Vue.js with TypeScript</li>
+        <li>Developed cross-platform mobile applications with Flutter and Dart</li>
+        <li>Contributed to UX/UI design, creating intuitive and user-centered interfaces</li>
+        <li>Participated in client meetings for requirements gathering and project updates</li>
+        <li>Deployed and maintained applications across production environments</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-item">
+      <div class="edu-left">
+        <div class="edu-school">Ho Chi Minh City University of Technology and Education</div>
+        <div class="edu-degree">Bachelor of Engineering — Information Technology</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title">Key Projects</div>
+    <div class="projects-grid">
+
+      <!-- Blooms & Brews -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-name">Blooms &amp; Brews</span>
+          <span class="project-platform mobile">Mobile</span>
+        </div>
+        <div class="project-category">Mobile Ordering App — Coffee &amp; Flower Shop Chain</div>
+        <div class="project-role-badge">Tech Lead &amp; Developer</div>
+        <ul class="project-highlights">
+          <li>Shipped to production — live on the Google Play Store (Android)</li>
+          <li>Built customer features in Flutter/Dart: product browsing, order customization, cart &amp; checkout, vouchers, order history, EN/VI localization</li>
+          <li>Managed state with Riverpod 3 (Notifier, sealed states, autoDispose); Clean Architecture with a check script enforcing layer dependencies</li>
+          <li>Auth0 authentication with Bearer tokens and secure storage; GraphQL/JSON responses mapped to typed models and domain entities; mock-auth/mock-data mode for backend-free development</li>
+          <li>Online payment via WebView with deep-link return; delivery/pickup time rules (lead time, opening hours)</li>
+          <li>Used Claude Code to accelerate and streamline the development workflow — building AI-assisted tooling for code scaffolding, layer-rule checks and review</li>
+        </ul>
+        <div class="project-tech">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">Dart</span>
+          <span class="tech-tag">Riverpod</span>
+          <span class="tech-tag">go_router</span>
+          <span class="tech-tag">GraphQL</span>
+          <span class="tech-tag">Auth0</span>
+          <span class="tech-tag">easy_localization</span>
+          <span class="tech-tag">flutter_secure_storage</span>
+          <span class="tech-tag">InAppWebView</span>
+          <span class="tech-tag">flutter_test / Mocktail</span>
+          <span class="tech-tag">Git</span>
+          <span class="tech-tag">GitHub</span>
+          <span class="tech-tag">Claude Code</span>
+        </div>
+      </div>
+
+      <!-- BurgerBot POS -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-name">BurgerBot POS</span>
+          <span class="project-platform mobile">Mobile</span>
+        </div>
+        <div class="project-category">Restaurant Point of Sale</div>
+        <div class="project-role-badge">Tech Lead &amp; Developer</div>
+        <ul class="project-highlights">
+          <li>Distributed to internal users via TestFlight (iOS) for in-house restaurant operations</li>
+          <li>Full POS workflow: table check-in → order → payment → receipt printing</li>
+          <li>Bluetooth &amp; LAN thermal printer integration (ESC/POS + Star Xpand)</li>
+          <li>Auth0 OAuth 2.0 with multi-environment support &amp; Firebase Remote Config</li>
+          <li>Clean architecture: Entity → Interactor → Presenter → View with Provider</li>
+        </ul>
+        <div class="project-tech">
+          <span class="tech-tag">Flutter</span><span class="tech-tag">Dart</span>
+          <span class="tech-tag">Provider</span><span class="tech-tag">GraphQL</span>
+          <span class="tech-tag">Auth0</span><span class="tech-tag">Firebase</span>
+          <span class="tech-tag">Bluetooth</span>
+        </div>
+      </div>
+
+      <!-- BagVision Mobile -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-name">BagVision</span>
+          <span class="project-platform mobile">Mobile</span>
+        </div>
+        <div class="project-category">Logistics &amp; Warehouse Counting</div>
+        <div class="project-role-badge">Developer</div>
+        <ul class="project-highlights">
+          <li>Container counting with pre/post-loading verification dialogs</li>
+          <li>Real-time defect photo capture with device camera</li>
+          <li>Offline-resilient architecture with connectivity detection</li>
+          <li>Landscape-optimized UI for warehouse tablet usage</li>
+        </ul>
+        <div class="project-tech">
+          <span class="tech-tag">Flutter</span><span class="tech-tag">Dart</span>
+          <span class="tech-tag">Provider</span><span class="tech-tag">GraphQL</span>
+          <span class="tech-tag">RxDart</span><span class="tech-tag">Camera</span>
+        </div>
+      </div>
+
+      <!-- Nexus ERP -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-name">Nexus</span>
+          <span class="project-platform">Web</span>
+        </div>
+        <div class="project-category">Enterprise ERP Platform</div>
+        <div class="project-role-badge">Tech Lead &amp; Developer</div>
+        <ul class="project-highlights">
+          <li>9+ functional modules: Sales, QM, BOM, Procurement, Warehouse &amp; more</li>
+          <li>Multi-tenant Auth0 with role-based module visibility per tenant</li>
+          <li>Vue i18n multi-language &amp; LaunchDarkly feature flags</li>
+          <li>Dynamic inspection &amp; non-conformance workflows with timeslot scheduling</li>
+        </ul>
+        <div class="project-tech">
+          <span class="tech-tag">Vue 3</span><span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">GraphQL</span><span class="tech-tag">Pinia</span>
+          <span class="tech-tag">Auth0</span><span class="tech-tag">LaunchDarkly</span>
+          <span class="tech-tag">Nx</span>
+        </div>
+      </div>
+
+      <!-- BurgerBot Web -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-name">BurgerBot</span>
+          <span class="project-platform">Web</span>
+        </div>
+        <div class="project-category">Restaurant Management Platform</div>
+        <div class="project-role-badge">Tech Lead &amp; Developer</div>
+        <ul class="project-highlights">
+          <li>Real-time Kitchen Display System (KDS) for live order tracking</li>
+          <li>Square POS integration with synchronized inventory &amp; sales data</li>
+          <li>60+ service architecture using DI and use-case patterns with Supabase</li>
+          <li>8+ report types: Sales, Profitability, Item Sales, Discount, Tips</li>
+        </ul>
+        <div class="project-tech">
+          <span class="tech-tag">Vue 3</span><span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Supabase</span><span class="tech-tag">Pinia</span>
+          <span class="tech-tag">Square POS</span><span class="tech-tag">ApexCharts</span>
+          <span class="tech-tag">Nx</span>
+        </div>
+      </div>
+
+      <!-- HRM -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-name">HRM</span>
+          <span class="project-platform">Web</span>
+        </div>
+        <div class="project-category">Factory HR &amp; Production System</div>
+        <div class="project-role-badge">Developer</div>
+        <ul class="project-highlights">
+          <li>Interactive factory floor map editor with drag-and-drop placement</li>
+          <li>IoT device APIs for real-time monitoring &amp; line-balancing data</li>
+          <li>Line-balancing reports with ApexCharts (8SPM metrics)</li>
+          <li>Fingerprint data upload and manpower analytics</li>
+        </ul>
+        <div class="project-tech">
+          <span class="tech-tag">Angular 17</span><span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">GraphQL</span><span class="tech-tag">PrimeNG</span>
+          <span class="tech-tag">ApexCharts</span><span class="tech-tag">IoT APIs</span>
+          <span class="tech-tag">Nx</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

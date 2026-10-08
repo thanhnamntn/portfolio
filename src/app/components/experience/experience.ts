@@ -12,4 +12,5 @@ import { PORTFOLIO } from '../../data/portfolio.data';
 export class ExperienceComponent {
   experience = PORTFOLIO.experience;
   education = PORTFOLIO.education;
+  stats = PORTFOLIO.stats;
 }

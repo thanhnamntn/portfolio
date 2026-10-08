@@ -1,0 +1,47 @@
+<section class="section case-study-section" id="case-study">
+  <div class="container">
+    <div class="cs-panel">
+      <!-- Dark left panel -->
+      <div class="cs-info" appScrollReveal>
+        <div class="section-eyebrow">
+          <span class="eyebrow-index">03 / 09</span>
+          <span class="eyebrow-label">Case Study</span>
+        </div>
+
+        <h2 class="cs-name">{{ study.name }}</h2>
+        <p class="cs-tagline">{{ study.tagline }}</p>
+        <div class="cs-line"></div>
+
+        <div class="cs-meta">
+          <div>
+            <span class="meta-label">Role</span>
+            <span class="meta-value">{{ study.role }}</span>
+          </div>
+          <div>
+            <span class="meta-label">Platform</span>
+            <span class="meta-value">{{ study.platforms }}</span>
+          </div>
+          <div class="meta-stack">
+            <span class="meta-label">Stack</span>
+            <span class="meta-value">{{ study.stack.join(' · ') }}</span>
+          </div>
+        </div>
+
+        <p class="cs-summary">{{ study.summary }}</p>
+      </div>
+
+      <!-- Right visual -->
+      <div class="cs-visual" appScrollReveal>
+        <!-- TODO: swap for a real product screenshot / dashboard photo -->
+        <div class="device-frame laptop">
+          <div class="device-screen">
+            <div class="mock-bar" style="width: 60%"></div>
+            <div class="mock-bar" style="width: 85%"></div>
+            <div class="mock-bar" style="width: 40%"></div>
+          </div>
+        </div>
+        <div class="device-frame phone"></div>
+      </div>
+    </div>
+  </div>
+</section>

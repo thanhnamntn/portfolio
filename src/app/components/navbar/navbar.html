@@ -1,34 +1,21 @@
-<nav class="navbar" [class.scrolled]="isScrolled()">
-  <div class="nav-inner">
-    <!-- Logo -->
-    <button class="logo" (click)="navigate('#home')">
-      <span class="gradient-text">NN</span>
-    </button>
-
-    <!-- Desktop links -->
-    <ul class="nav-links">
-      @for (link of links; track link.label) {
-        <li>
-          <button (click)="navigate(link.href)">{{ link.label }}</button>
-        </li>
+<header
+        class="fixed left-0 top-0 z-50 w-full border-b border-black/10 bg-[#f5f5f2]/85 backdrop-blur-md">
+  <div
+       class="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-6 lg:px-10">
+    <a href="#"
+       class="text-sm font-bold tracking-tight">
+      NGUYEN THANH NAM
+    </a>
+    <nav class="hidden items-center gap-8 md:flex">
+      @for (item of links; track item.label) {
+      <a class="text-xs font-medium text-black/60 transition hover:text-black">
+        {{ item.label }}
+      </a>
       }
-    </ul>
-
-    <!-- CTA -->
-    <a href="mailto:thanhnamntn96@gmail.com" class="nav-cta">Hire Me</a>
-
-    <!-- Hamburger -->
-    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()">
-      <span></span><span></span><span></span>
+    </nav>
+    <!-- Mobile -->
+    <button class="text-xs font-medium md:hidden">
+      MENU
     </button>
   </div>
-
-  <!-- Mobile drawer -->
-  @if (menuOpen()) {
-    <div class="mobile-menu">
-      @for (link of links; track link.label) {
-        <button (click)="navigate(link.href)">{{ link.label }}</button>
-      }
-    </div>
-  }
-</nav>
+</header>

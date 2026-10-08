@@ -1,0 +1,26 @@
+<section class="section skills-section" id="toolkit">
+  <div class="container">
+    <div class="section-shell">
+      <div class="section-eyebrow" appScrollReveal>
+        <span class="eyebrow-index">05 / 09</span>
+        <span class="eyebrow-label">Tech Stack</span>
+      </div>
+
+      <div class="tk-content">
+        <h2 appScrollReveal>My toolkit.</h2>
+        <p class="section-sub" appScrollReveal>Technologies I use to build modern web and mobile applications.</p>
+
+        <div class="tool-grid" appScrollReveal>
+          @for (tool of tools; track tool.name) {
+            <div class="tool-tile glass-card">
+              <span class="tool-abbr" [style.background]="tool.color" [style.color]="tool['dark'] ? '#111' : '#fff'">
+                {{ tool.abbr }}
+              </span>
+              <span class="tool-name">{{ tool.name }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

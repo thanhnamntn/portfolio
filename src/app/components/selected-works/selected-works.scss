@@ -1,0 +1,136 @@
+.works-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  min-width: 0;
+}
+
+.works-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    font-weight: 700;
+  }
+}
+
+.section-sub {
+  margin-top: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 460px;
+  line-height: 1.7;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.arrow-btn {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+
+  &:hover {
+    border-color: var(--purple);
+    background: rgba(36, 81, 255, 0.08);
+  }
+}
+
+.works-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar { display: none; }
+
+  @media (max-width: 900px) {
+    grid-auto-flow: column;
+    grid-auto-columns: 85%;
+  }
+}
+
+.work-card {
+  scroll-snap-align: start;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(17, 17, 17, 0.08);
+  }
+}
+
+.work-thumb {
+  aspect-ratio: 16 / 11;
+  background: linear-gradient(135deg, rgba(36, 81, 255, 0.12), rgba(29, 78, 216, 0.05));
+  border-bottom: 1px solid var(--border);
+}
+
+.work-body {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.work-index {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.work-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.work-category {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+
+.tech-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 0.22rem 0.55rem;
+  border-radius: 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.view-all {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: gap 0.2s;
+
+  &:hover { gap: 0.6rem; }
+}

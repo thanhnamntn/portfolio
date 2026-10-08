@@ -1,0 +1,31 @@
+<section class="section" id="capabilities">
+  <div class="container">
+    <div class="section-shell">
+      <div class="section-eyebrow" appScrollReveal>
+        <span class="eyebrow-index">04 / 09</span>
+        <span class="eyebrow-label">What I Do</span>
+      </div>
+
+      <div class="cap-content">
+        <h2 class="cap-heading" appScrollReveal>
+          I don't just write code.<br>
+          I build <span class="gradient-text">products.</span>
+        </h2>
+
+        <div class="cap-grid" appScrollReveal>
+          @for (group of groups; track group.title) {
+            <div class="cap-group">
+              <span class="cap-icon">{{ group.icon }}</span>
+              <h3 class="cap-title">{{ group.title }}</h3>
+              <ul class="cap-bullets">
+                @for (bullet of group.bullets; track bullet) {
+                  <li>{{ bullet }}</li>
+                }
+              </ul>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

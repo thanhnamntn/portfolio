@@ -1,41 +1,27 @@
-import { Component } from '@angular/core';
-import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+import { Component, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { PORTFOLIO } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ScrollRevealDirective],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
 export class ContactComponent {
-  contact = PORTFOLIO.contact;
+  private platformId = inject(PLATFORM_ID);
 
-  cards = [
-    {
-      label: 'Email',
-      value: PORTFOLIO.contact.email,
-      href: `mailto:${PORTFOLIO.contact.email}`,
-      icon: 'email',
-    },
-    {
-      label: 'Phone',
-      value: PORTFOLIO.contact.phone,
-      href: `tel:+84976579731`,
-      icon: 'phone',
-    },
-    {
-      label: 'LinkedIn',
-      value: 'nam-nguyen-thanh',
-      href: PORTFOLIO.contact.linkedin,
-      icon: 'linkedin',
-    },
-    {
-      label: 'GitHub',
-      value: 'thanhnamntn',
-      href: PORTFOLIO.contact.github,
-      icon: 'github',
-    },
+  contact = PORTFOLIO.contact;
+  name = PORTFOLIO.name;
+
+  links = [
+    { label: 'GitHub', href: PORTFOLIO.contact.github },
+    { label: 'LinkedIn', href: PORTFOLIO.contact.linkedin },
   ];
+
+  scrollToTop() {
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 }
